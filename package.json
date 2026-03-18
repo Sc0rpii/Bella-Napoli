@@ -1,0 +1,19 @@
+{
+  "name": "pizzeria",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^4.2.1"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.1"
+  }
+}

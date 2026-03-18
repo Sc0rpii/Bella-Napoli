@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme{
+    --color-bg: #F8F0E3;
+    --color-primary: #461D12;
+    --color-text: #E9E5E2;
+    --color-accent: #A91E12;
+
+    --font-Agbalumo: "Agbalumo", sans-serif;
+    --font-Roboto: "Roboto", sans-serif;
+
+    /* --text-title: clamp(2, 2rem + 2vw, 3rem); */
+    --text-title: min(12vw, 2.5rem);
+}
+
+@layer components {
+  .text-title {
+    font-size: var(--text-fluid);
+  }
+  .nav-line {
+    transform: scaleX(0);
+    transform-origin: center;   /* ← espande dal centro ai bordi */
+    transition: transform 0.3s ease;
+  }
+
+  .nav-item:hover .nav-line   { transform: scaleX(1); } /* hover */
+  .nav-item.is-current .nav-line { transform: scaleX(1); } /* pagina attiva */
+
+  /* animazione hamburger → X */
+  #menu-toggle.is-open .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #menu-toggle.is-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  #menu-toggle.is-open .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .title{
+    font-family: var(--font-Roboto);
+    font-weight: 700;
+    font-size: clamp(1.2rem, 1rem + 2vw, 4rem);
+  }
+}
